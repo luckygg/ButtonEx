@@ -18,6 +18,7 @@ CFTech_ButtonExDlg::CFTech_ButtonExDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CFTech_ButtonExDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	m_pbtnTest4 = NULL;
 }
 
 void CFTech_ButtonExDlg::DoDataExchange(CDataExchange* pDX)
@@ -63,6 +64,7 @@ BOOL CFTech_ButtonExDlg::OnInitDialog()
 
 	m_btnTest3.SetEnable(false);
 	m_btnTest3.SetText(L"Disabled");
+
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -113,4 +115,14 @@ void CFTech_ButtonExDlg::OnBnClickedButton1()
 void CFTech_ButtonExDlg::OnBnClickedButton3()
 {
 	AfxMessageBox(L"click");
+}
+
+BOOL CFTech_ButtonExDlg::OnCommand(WPARAM wParam, LPARAM lParam) 
+{ 
+	if(wParam == m_pbtnTest4->GetDlgCtrlID())
+	{
+		AfxMessageBox(L"Dynamic Button");
+	} 
+
+	return CDialogEx::OnCommand(wParam, lParam); 
 }

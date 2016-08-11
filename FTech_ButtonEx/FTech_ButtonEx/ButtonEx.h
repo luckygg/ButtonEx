@@ -17,6 +17,9 @@ public:
 	virtual ~CButtonEx();
 
 public :
+	//----- Dynamic Create Control -----//
+	BOOL CreateContol(CWnd* pWnd, CRect rcSize, UINT ID);
+
 	//----- Set Enable & Disable Control -----//
 	void SetEnable(bool bEnable) { m_bEnable = bEnable; EnableWindow(bEnable); Invalidate(); }
 

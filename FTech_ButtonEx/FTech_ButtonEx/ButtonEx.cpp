@@ -66,6 +66,13 @@ void CButtonEx::PreSubclassWindow()
 	CButton::PreSubclassWindow();
 }
 
+BOOL CButtonEx::CreateContol(CWnd* pWnd, CRect rcSize, UINT ID)
+{
+	if (pWnd == NULL) return false;
+
+	return CButton::Create(NULL,WS_CHILD|WS_VISIBLE|BS_PUSHBUTTON, rcSize, pWnd, ID );
+}
+
 BOOL CButtonEx::OnEraseBkgnd(CDC* pDC)
 {
 	//Avoid Flicker.

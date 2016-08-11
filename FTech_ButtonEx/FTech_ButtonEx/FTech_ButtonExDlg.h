@@ -33,6 +33,8 @@ public:
 	CButtonEx m_btnTest1;
 	CButtonEx m_btnTest2;
 	CButtonEx m_btnTest3;
+	CButtonEx* m_pbtnTest4;
+	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
 	afx_msg void OnBnClickedButton1();
 	afx_msg void OnBnClickedButton3();
 };
