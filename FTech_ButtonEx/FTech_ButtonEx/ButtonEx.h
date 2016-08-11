@@ -8,7 +8,7 @@
 
 // CButtonEx
 
-class CButtonEx : public CWnd
+class CButtonEx : public CButton
 {
 	DECLARE_DYNAMIC(CButtonEx)
 

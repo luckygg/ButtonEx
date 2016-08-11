@@ -8,7 +8,7 @@
 
 // CButtonEx
 
-IMPLEMENT_DYNAMIC(CButtonEx, CWnd)
+IMPLEMENT_DYNAMIC(CButtonEx, CButton)
 
 CButtonEx::CButtonEx()
 {
@@ -43,7 +43,7 @@ CButtonEx::~CButtonEx()
 }
 
 
-BEGIN_MESSAGE_MAP(CButtonEx, CWnd)
+BEGIN_MESSAGE_MAP(CButtonEx, CButton)
 	ON_WM_PAINT()
 	ON_WM_ERASEBKGND()
 	ON_WM_MOUSELEAVE()
@@ -63,13 +63,13 @@ void CButtonEx::PreSubclassWindow()
 
 	m_rcImage = Rect(rect.left, rect.top, rect.Width(), rect.Height());
 
-	CWnd::PreSubclassWindow();
+	CButton::PreSubclassWindow();
 }
 
 BOOL CButtonEx::OnEraseBkgnd(CDC* pDC)
 {
 	//Avoid Flicker.
-	//return CWnd::OnEraseBkgnd(pDC);
+	//return CButton::OnEraseBkgnd(pDC);
 	return TRUE;
 }
 
@@ -296,7 +296,7 @@ void CButtonEx::OnMouseLeave()
 {
 	m_bMouseTrack = FALSE;
 
-	CWnd::OnMouseLeave();
+	CButton::OnMouseLeave();
 }
 
 
@@ -311,7 +311,7 @@ void CButtonEx::OnMouseMove(UINT nFlags, CPoint point)
 		m_bMouseTrack = ::_TrackMouseEvent(&tme);
 	}
 
-	CWnd::OnMouseMove(nFlags, point);
+	CButton::OnMouseMove(nFlags, point);
 }
 
 
@@ -319,7 +319,7 @@ void CButtonEx::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	m_bClicked = true;
 
-	CWnd::OnLButtonDown(nFlags, point);
+	CButton::OnLButtonDown(nFlags, point);
 }
 
 
@@ -327,5 +327,5 @@ void CButtonEx::OnLButtonUp(UINT nFlags, CPoint point)
 {
 	m_bClicked = false;
 
-	CWnd::OnLButtonUp(nFlags, point);
+	CButton::OnLButtonUp(nFlags, point);
 }
