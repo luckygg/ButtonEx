@@ -37,4 +37,5 @@ public:
 	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
 	afx_msg void OnBnClickedButton1();
 	afx_msg void OnBnClickedButton3();
+	afx_msg void OnDestroy();
 };

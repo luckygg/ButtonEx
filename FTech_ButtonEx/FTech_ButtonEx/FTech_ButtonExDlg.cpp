@@ -34,6 +34,7 @@ BEGIN_MESSAGE_MAP(CFTech_ButtonExDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CFTech_ButtonExDlg::OnBnClickedButton1)
 	ON_BN_CLICKED(IDC_BUTTON3, &CFTech_ButtonExDlg::OnBnClickedButton3)
+	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 
@@ -131,4 +132,16 @@ BOOL CFTech_ButtonExDlg::OnCommand(WPARAM wParam, LPARAM lParam)
 	} 
 
 	return CDialogEx::OnCommand(wParam, lParam); 
+}
+
+void CFTech_ButtonExDlg::OnDestroy()
+{
+	CDialogEx::OnDestroy();
+
+	if (m_pbtnTest4 != NULL)
+	{
+		m_pbtnTest4->DestroyWindow();
+		delete m_pbtnTest4;
+		m_pbtnTest4 = NULL;
+	}
 }
