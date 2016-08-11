@@ -65,6 +65,12 @@ BOOL CFTech_ButtonExDlg::OnInitDialog()
 	m_btnTest3.SetEnable(false);
 	m_btnTest3.SetText(L"Disabled");
 
+	m_pbtnTest4 = new CButtonEx();
+	m_pbtnTest4->CreateContol(this,CRect(145,75,270,130),2000);
+	m_pbtnTest4->SetText(L"Dynamic");
+	m_pbtnTest4->SetColorBkg(255,128,128,128);
+	m_pbtnTest4->SetColorBorder(255,0,255,0);
+
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
