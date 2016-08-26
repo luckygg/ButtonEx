@@ -2,7 +2,6 @@
 //
 
 #include "stdafx.h"
-#include "FTech_ButtonEx.h"
 #include "ButtonEx.h"
 
 
