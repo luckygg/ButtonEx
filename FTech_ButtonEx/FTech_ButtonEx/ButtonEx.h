@@ -5,6 +5,9 @@
 //----------------------------------------------------------
 // Programmed by William Kim
 //----------------------------------------------------------
+// Last Update : 2016-09-06 17:08
+// Modified by William Kim
+//----------------------------------------------------------
 
 // CButtonEx
 
@@ -38,6 +41,9 @@ public :
 	void SetColorBkg	(int nA, int nR, int nG, int nB) { m_clrBkg		= Color(nA, nR, nG, nB); Invalidate(); }
 	void SetColorBorder	(int nA, int nR, int nG, int nB) { m_clrBorder	= Color(nA, nR, nG, nB); Invalidate(); }
 	void SetColorText	(int nA, int nR, int nG, int nB) { m_clrText	= Color(nA, nR, nG, nB); Invalidate(); }
+	void SetColorBkg	(int nA, COLORREF clrColor);
+	void SetColorBorder	(int nA, COLORREF clrColor);
+	void SetColorText	(int nA, COLORREF clrColor);
 
 	//----- Set Text Alignment -----//
 	void SetAlignTextLT() { m_nTextAlign1 = 0; m_nTextAlign2 = 0; Invalidate(); }

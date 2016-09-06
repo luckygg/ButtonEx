@@ -335,3 +335,33 @@ void CButtonEx::OnLButtonUp(UINT nFlags, CPoint point)
 
 	CButton::OnLButtonUp(nFlags, point);
 }
+
+void CButtonEx::SetColorBkg(int nA, COLORREF clrColor)
+{
+	int r = GetRValue(clrColor);
+	int g = GetGValue(clrColor);
+	int b = GetBValue(clrColor);
+
+	m_clrBkg = Color(nA, r, g, b); 
+	Invalidate();
+}
+
+void CButtonEx::SetColorBorder(int nA, COLORREF clrColor)
+{
+	int r = GetRValue(clrColor);
+	int g = GetGValue(clrColor);
+	int b = GetBValue(clrColor);
+
+	m_clrBorder = Color(nA, r, g, b); 
+	Invalidate();
+}
+
+void CButtonEx::SetColorText(int nA, COLORREF clrColor)
+{
+	int r = GetRValue(clrColor);
+	int g = GetGValue(clrColor);
+	int b = GetBValue(clrColor);
+
+	m_clrText = Color(nA, r, g, b); 
+	Invalidate();
+}
