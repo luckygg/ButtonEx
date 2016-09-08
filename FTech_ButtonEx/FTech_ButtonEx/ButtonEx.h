@@ -5,7 +5,7 @@
 //----------------------------------------------------------
 // Programmed by William Kim
 //----------------------------------------------------------
-// Last Update : 2016-09-06 17:08
+// Last Update : 2016-09-08 09:40
 // Modified by William Kim
 //----------------------------------------------------------
 
@@ -32,10 +32,11 @@ public :
 	//----- Set Offset -----//
 	void SetOffsetText	(int nX, int nY) { m_nOffsetTextX = nX; m_nOffsetTextY = nY; Invalidate(); }
 
-	//----- Set Size -----//
+	//----- Set & Get Size -----//
 	void SetSizeText	(float fSize) { m_fSizeText		= fSize; }
 	void SetSizeBorder	(float fSize) { m_fSizeBorder	= fSize; }
 	void SetSizeImage	(int nLeft, int nTop, int nWidth, int nHeight) { m_rcImage = Rect(nLeft, nTop, nWidth, nHeight); Invalidate(); }
+	CRect GetSize() { CRect size; GetClientRect(&size); return size;}
 
 	//----- Set Color -----//
 	void SetColorBkg	(int nA, int nR, int nG, int nB) { m_clrBkg		= Color(nA, nR, nG, nB); Invalidate(); }
