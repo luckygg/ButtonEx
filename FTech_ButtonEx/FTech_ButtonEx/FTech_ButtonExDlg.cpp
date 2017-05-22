@@ -53,22 +53,22 @@ BOOL CFTech_ButtonExDlg::OnInitDialog()
 	m_btnTest1.SetColorBkg(255,41,41,41);
 	m_btnTest1.SetColorBorder(255,41,41,41);
 	m_btnTest1.LoadImageFromResource(IDB_PNG1, true);
-	m_btnTest1.SetText(L"Button");
+	m_btnTest1.SetText(_T("Button"));
 	m_btnTest1.SetAlignTextRM();
 	m_btnTest1.SetOffsetText(-10,0);
 	m_btnTest1.SetSizeImage(5,5,50,50);
 
-	m_btnTest2.LoadImageFromFile(L"save.png");
+	m_btnTest2.LoadImageFromFile(_T("save.png"));
 	m_btnTest2.SetColorBkg(255,61,61,61);
 	m_btnTest2.SetColorBorder(255,61,61,61);
-	m_btnTest2.SetText(L"");
+	m_btnTest2.SetText(_T(""));
 
 	m_btnTest3.SetEnable(false);
-	m_btnTest3.SetText(L"Disabled");
+	m_btnTest3.SetText(_T("Disabled"));
 
 	m_pbtnTest4 = new CButtonEx();
 	m_pbtnTest4->CreateContol(this,CRect(145,75,270,130),2000);
-	m_pbtnTest4->SetText(L"Dynamic");
+	m_pbtnTest4->SetText(_T("Dynamic"));
 	m_pbtnTest4->SetColorBkg(255,128,128,128);
 	m_pbtnTest4->SetColorBorder(255,0,255,0);
 
@@ -115,20 +115,20 @@ HCURSOR CFTech_ButtonExDlg::OnQueryDragIcon()
 
 void CFTech_ButtonExDlg::OnBnClickedButton1()
 {
-	AfxMessageBox(L"click");
+	AfxMessageBox(_T("click"));
 }
 
 
 void CFTech_ButtonExDlg::OnBnClickedButton3()
 {
-	AfxMessageBox(L"click");
+	AfxMessageBox(_T("click"));
 }
 
 BOOL CFTech_ButtonExDlg::OnCommand(WPARAM wParam, LPARAM lParam) 
 { 
 	if(wParam == m_pbtnTest4->GetDlgCtrlID())
 	{
-		AfxMessageBox(L"Dynamic Button");
+		AfxMessageBox(_T("Dynamic Button"));
 	} 
 
 	return CDialogEx::OnCommand(wParam, lParam); 
